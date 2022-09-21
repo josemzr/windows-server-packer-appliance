@@ -44,7 +44,7 @@
       "ssh_password": "{{ user `guest_password` }}",
       "ssh_port": 22,
       "ssh_timeout": "20m",
-      "format": "ova",
+      "format": "ovf",
       "vmx_data": {
         "numvcpus": "{{ user `numvcpus` }}",
         "memsize": "{{ user `ramsize` }}",
