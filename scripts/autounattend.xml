@@ -119,7 +119,7 @@
         <!-- https://docs.microsoft.com/en-us/windows-hardware/customize/desktop/unattend/microsoft-windows-shell-setup -->
             <AutoLogon>
                 <Password>
-                    <Value>packer</Value>
+                    <Value>VMware1!</Value>
                     <PlainText>true</PlainText>
                 </Password>
                 <Enabled>true</Enabled>
@@ -184,7 +184,7 @@
             </OOBE>
             <UserAccounts>
                 <AdministratorPassword>
-                    <Value>packer</Value>
+                    <Value>VMware1!</Value>
                     <PlainText>true</PlainText>
                 </AdministratorPassword>
             </UserAccounts>
