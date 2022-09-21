@@ -9,8 +9,8 @@
     "iso_url": "https://software-download.microsoft.com/download/sg/20348.169.210806-2348.fe_release_svc_refresh_SERVER_EVAL_x64FRE_en-us.iso",
     "numvcpus": "2",
     "ramsize": "4096",
-    "guest_username": "root",
-    "guest_password": "VMware1!"
+    "winrm_password" : "packer",
+    "winrm_username" : "Administrator"
   },
   "builders": [
     {
