@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <Envelope xmlns="http://schemas.dmtf.org/ovf/envelope/1" xmlns:ovf="http://schemas.dmtf.org/ovf/envelope/1" xmlns:vmw="http://www.vmware.com/schema/ovf" xmlns:rasd="http://schemas.dmtf.org/wbem/wscim/1/cim-schema/2/CIM_ResourceAllocationSettingData" xmlns:vssd="http://schemas.dmtf.org/wbem/wscim/1/cim-schema/2/CIM_VirtualSystemSettingData">
   <References>
-    <File ovf:id="file1" ovf:href="Windows2019-Template-1.vmdk"/>
+    <File ovf:id="file1" ovf:href="Windows2022-Template-1.vmdk"/>
   </References>
   <DiskSection>
     <Info>List of the virtual disks</Info>
@@ -20,12 +20,12 @@
   <vmw:IpAssignmentSection vmw:schemes="ovfenv" vmw:protocols="IPv4">
     <Info>Supported IP assignment schemes</Info>
   </vmw:IpAssignmentSection>
-  <VirtualSystem ovf:id="Windows2019-Template">
+  <VirtualSystem ovf:id="Windows2022-Template">
     <Info>A Virtual system</Info>
-    <Name>Windows2019-Template</Name>
+    <Name>Windows2022-Template</Name>
     <OperatingSystemSection ovf:id="112" vmw:osType="windows9Server64Guest">
       <Info>The operating system installed</Info>
-      <Description>Microsoft Windows Server 2019 (64-bit)</Description>
+      <Description>Microsoft Windows Server 2022 (64-bit)</Description>
     </OperatingSystemSection>
     <VirtualHardwareSection ovf:transport="com.vmware.guestInfo">
       <Info>Virtual hardware requirements</Info>
@@ -133,7 +133,7 @@
     </vmw:StorageSection>
     <ProductSection>
       <Info>Information about the installed software</Info>
-      <Product>Windows Server 2019 Template</Product>
+      <Product>Windows Server 2022 Template</Product>
       <Vendor>virtuallyGhetto</Vendor>
       <VendorUrl>www.virtuallyghetto.com</VendorUrl>
       <Category>Networking</Category>
