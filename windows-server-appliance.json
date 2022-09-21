@@ -94,6 +94,20 @@
         "scripts": ["scripts/cleanup.ps1"],
         "pause_before": "1m"
     }
-]
+],
+  "post-processors": [
+    {
+      "environment_vars": [
+        "WINDOWS_SERVER_APPLIANCE_NAME={{ user `vm_name` }}",
+        "VERSION={{ user `version` }}",
+        "FINAL_WINDOWS_SERVER_APPLIANCE_NAME={{ user `vm_name` }}_{{user `version`}}"
+      ],
+      "inline": [
+        "cd manual",
+        "./add_ovf_properties.sh"
+      ],
+      "type": "shell-local"
+    }
+  ]
 }
 
