@@ -13,4 +13,4 @@ for($try = 0; $try -lt 5; $try++)
 Write-Error "Chocolatey failed to install, please re-build your machine again"
 exit 2
 
-choco install -y git googlechrome dotnetfx dotnetcore 7zip kubernetes-helm kubernetes-cli notepadplusplus jre8 vlc python putty.install sysinternals packer terraform
+choco install -y git googlechrome dotnetfx dotnetcore 7zip kubernetes-helm kubernetes-cli notepadplusplus jre8 python putty.install sysinternals packer terraform
