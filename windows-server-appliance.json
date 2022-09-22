@@ -91,6 +91,14 @@
     },
     {
         "type": "powershell",
+        "scripts": ["scripts/chocolatey.ps1"]
+    },
+    {
+        "type": "powershell",
+        "scripts": ["scripts/wac.ps1"]
+    },
+    {
+        "type": "powershell",
         "scripts": ["scripts/cleanup.ps1"],
         "pause_before": "1m"
     }
