@@ -16,8 +16,8 @@
     {
       "type": "vmware-iso",
       "vm_name": "{{ user `vm_name` }}",
-      "guest_os_type": "windows9Server64Guest",
-      "version": "14",
+      "guest_os_type": "windows9srv-64",
+      "version": "15",
       "disk_size": 40960,
       "boot_wait": "10s",
       "headless": false,
