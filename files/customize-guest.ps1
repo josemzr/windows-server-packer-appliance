@@ -2,8 +2,8 @@
 # www.virtuallyghetto.com
 # Sample Network Customization script for Windows Server 2016 + Active Directory Domain join
 
-$customizationRanFile = [System.Environment]::GetEnvironmentVariable('TEMP','Machine') + "\ran_customization"
-$customizationLogFile = [System.Environment]::GetEnvironmentVariable('TEMP','Machine') + "\customization-log.txt"
+$customizationRanFile = "C:\ran_customization"
+$customizationLogFile = "C:\customization-log.txt"
 
 if(! (Test-Path -LiteralPath $customizationRanFile)) {
     "Customization Started @ $(Get-Date)" | Out-File -FilePath $customizationLogFile
@@ -52,6 +52,9 @@ if(! (Test-Path -LiteralPath $customizationRanFile)) {
             "Joining Active Directory Domain $($ovfPropertyValues['guestinfo.ad_domain'])" | Out-File -FilePath $customizationLogFile -Append
             Add-Computer -NewName $ovfPropertyValues['guestinfo.hostname'] -Domain $ovfPropertyValues['guestinfo.ad_domain'] -Credential $joinCred -Restart | Out-File -FilePath $customizationLogFile -Append
         }
+		
+		# Reboot system to apply hostname changes
+		shutdown /r /t 5 /c "Rebooting system to apply guest customizations..."
     } else {
         "No OVF Properties were found, defaulting to DHCP for networking" | Out-File -FilePath $customizationLogFile -Append
     }
