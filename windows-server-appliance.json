@@ -63,7 +63,7 @@
     {
       "type": "file",
       "source": "files/customize-guest.ps1",
-      "destination": "C:\customize-guest.ps1"
+      "destination": "C:\\customize-guest.ps1"
     },
     {
         "type": "powershell",
