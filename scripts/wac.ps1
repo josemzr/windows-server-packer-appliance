@@ -2,7 +2,7 @@
 Invoke-WebRequest 'https://aka.ms/WACDownload' -OutFile "C:\Windows\Temp\WAC.msi"
 
 ## install windows admin center
-$msiArgs = @("/i", "$pwd\WAC.msi", "/qn", "/L*v", "log.txt", "SME_PORT=443", "SSL_CERTIFICATE_OPTION=generate")
+$msiArgs = @("/i", "C:\Windows\Temp\WAC.msi", "/qn", "/L*v", "log.txt", "SME_PORT=443", "SSL_CERTIFICATE_OPTION=generate")
 Start-Process msiexec.exe -Wait -ArgumentList $msiArgs
 
 ## Add Firewall Rules
