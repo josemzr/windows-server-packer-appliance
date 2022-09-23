@@ -61,6 +61,11 @@
   ],
   "provisioners": [
     {
+      "type": "file",
+      "source": "files/customize-guest.ps1",
+      "destination": "C:\customize-guest.ps1"
+    },
+    {
         "type": "powershell",
         "scripts": ["scripts/vmware-tools.ps1"],
         "pause_before": "1m"
