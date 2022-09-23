@@ -71,6 +71,9 @@ powercfg /change standby-timeout-dc 0
 powercfg /change hibernate-timeout-ac 0
 powercfg /change hibernate-timeout-dc 0
 
+# Run Customization for OVFEnv
+schtasks /create /tn "CustomizeGuest" /sc onstart /delay 0000:10 /rl highest /ru system /tr "powershell.exe -file C:\customize-guest.ps1"
+
 # Disable password expiration for Administrator
 Set-LocalUser Administrator -PasswordNeverExpires $true
 
