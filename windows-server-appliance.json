@@ -95,6 +95,10 @@
     },
     {
         "type": "powershell",
+        "scripts": ["scripts/packages.ps1"]
+    },
+    {
+        "type": "powershell",
         "scripts": ["scripts/wac.ps1"]
     },
     {
