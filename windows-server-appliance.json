@@ -19,6 +19,7 @@
       "guest_os_type": "windows9srv-64",
       "version": "15",
       "disk_size": 40960,
+      "disk_type_id": "thin",
       "boot_wait": "10s",
       "headless": false,
       "vnc_over_websocket": true,
