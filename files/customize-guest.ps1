@@ -81,8 +81,8 @@ if(! (Test-Path -LiteralPath $customizationRanFile)) {
             Add-Computer -NewName $vmHostname -Domain $vmADDomain -Credential $joinCred -Restart | Out-File -FilePath $customizationLogFile -Append
         }
 		
-		# Reboot system to apply hostname changes
-		#shutdown /r /t 5 /c "Rebooting system to apply guest customizations..."
+	# Reboot system to apply hostname changes
+	shutdown /r /t 5 /c "Rebooting system to apply guest customizations..."
     } else {
         "No OVF Properties were found, defaulting to DHCP for networking" | Out-File -FilePath $customizationLogFile -Append
     }
