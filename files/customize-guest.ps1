@@ -35,16 +35,6 @@ if(! (Test-Path -LiteralPath $customizationRanFile)) {
 	$vmDNS_SAN = $vmDNS -replace(" ",",")
 	$vmADUsername_SAN = $vmADUsername.split('\')[1]
 	
-	Write-Host $vmIP_SAN
-	Write-Host $vmNetmaskPrefix_SAN
-	Write-Host $vmHostname
-	Write-Host $vmGW_SAN
-	Write-Host $vmDNS_SAN
-	Write-Host $vmAdminPass
-	Write-Host $vmADUsername_SAN
-	Write-Host $vmADDomain
-	Write-Host $vmADPassword
-	
 	# If hostname is not specified, VM will use DHCP. If it is specified, then it is mandatory to use static IP.
 	# vCenter OVFEnv will leave a blank ("") string when not specifying a parameter. However, ESXi leaves the parameter as null. Therefore it is necessary to consider that case as well.
     if(($vmHostname -ne "") -and ($vmHostname -ne "null")){
