@@ -48,7 +48,7 @@ if(! (Test-Path -LiteralPath $customizationRanFile)) {
         "Configuring IP Address to $vmIP_SAN" | Out-File -FilePath $customizationLogFile -Append
         "Configuring Netmask Prefix to $vmNetmaskPrefix_SAN" | Out-File -FilePath $customizationLogFile -Append
         "Configuring Gateway to $vmGW_SAN" | Out-File -FilePath $customizationLogFile -Append
-        New-NetIPAddress –InterfaceAlias $EthernetInterfaceAliasName -AddressFamily IPv4 –IPAddress $vmIP_SAN –PrefixLength $vmNetmaskPrefix_SAN_SAN | Out-File -FilePath $customizationLogFile -Append
+        New-NetIPAddress –InterfaceAlias $EthernetInterfaceAliasName -AddressFamily IPv4 –IPAddress $vmIP_SAN –PrefixLength $vmNetmaskPrefix_SAN | Out-File -FilePath $customizationLogFile -Append
         New-NetRoute -DestinationPrefix 0.0.0.0/0 -InterfaceAlias $EthernetInterfaceAliasName -NextHop $vmGW_SAN | Out-File -FilePath $customizationLogFile -Append
 
         # Configure DNS
