@@ -14,10 +14,10 @@ if(! (Test-Path -LiteralPath $customizationRanFile)) {
     [xml]$ovfEnv = & $VMwareToolsExe --cmd "info-get guestinfo.ovfEnv" | Out-String
 	
 	$vmIP = $ovfEnv.Environment.PropertySection.Property | ?{ $_.key -like '*ipaddress*' } | select -expand value
-    $vmNetmask = $ovfEnv.Environment.PropertySection.Property | ?{ $_.key -like '*netmask*' } | select -expand value
-    $vmGW = $ovfEnv.Environment.PropertySection.Property | ?{ $_.key -like '*gateway*' } | select -expand value
-    $vmHostname = $ovfEnv.Environment.PropertySection.Property | ?{ $_.key -like '*hostname*' } | select -expand value
-    $vmDNS = $ovfEnv.Environment.PropertySection.Property | ?{ $_.key -like '*dns*' } | select -expand value
+    	$vmNetmask = $ovfEnv.Environment.PropertySection.Property | ?{ $_.key -like '*netmask*' } | select -expand value
+    	$vmGW = $ovfEnv.Environment.PropertySection.Property | ?{ $_.key -like '*gateway*' } | select -expand value
+    	$vmHostname = $ovfEnv.Environment.PropertySection.Property | ?{ $_.key -like '*hostname*' } | select -expand value
+    	$vmDNS = $ovfEnv.Environment.PropertySection.Property | ?{ $_.key -like '*dns*' } | select -expand value
 	$vmAdminPass = $ovfEnv.Environment.PropertySection.Property | ?{ $_.key -like '*adminpass*' } | select -expand value
 	
 	$vmADDomain = $vmenv.Environment.PropertySection.Property | ?{ $_.key -like '*ad_domain*' } | select -expand value
