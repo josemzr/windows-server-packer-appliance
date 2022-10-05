@@ -77,6 +77,12 @@ schtasks /create /tn "CustomizeGuest" /sc onstart /delay 0000:10 /rl highest /ru
 # Disable password expiration for Administrator
 Set-LocalUser Administrator -PasswordNeverExpires $true
 
+# Disable password complexity requirements
+secedit /export /cfg c:\secpol.cfg
+(gc C:\secpol.cfg).replace("PasswordComplexity = 1", "PasswordComplexity = 0") | Out-File C:\secpol.cfg
+secedit /configure /db c:\windows\security\local.sdb /cfg c:\secpol.cfg /areas SECURITYPOLICY
+rm -force c:\secpol.cfg -confirm:$false
+
 # Configure PowerShell prompt
 $psprofile = @'
 Set-Location /
