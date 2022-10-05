@@ -2,7 +2,7 @@
       <Info>Information about the installed software</Info>
       <Product>Windows Server 2022 Template</Product>
       <Vendor>Jose Manzaneque</Vendor>
-      <VendorUrl>www.virtuallyghetto.com</VendorUrl>
+      <VendorUrl>https://github.com/josemzr/windows-server-packer-appliance</VendorUrl>
       <Category>Networking</Category>
       <Property ovf:qualifiers="MinLen(3) MaxLen(15)" ovf:userConfigurable="true" ovf:type="string" ovf:key="guestinfo.hostname">
         <Label>Computer Name</Label>
